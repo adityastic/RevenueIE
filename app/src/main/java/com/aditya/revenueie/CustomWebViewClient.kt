@@ -11,8 +11,9 @@ import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.preference.PreferenceManager
+import com.aditya.revenueie.pjo.AddReceiptPage
 import com.aditya.revenueie.pjo.RedirectToTracker
-import com.aditya.revenueie.pjo.SignUpPage
+import com.aditya.revenueie.pjo.SignInPage
 import com.aditya.revenueie.pjo.TextVerificationPageReceiverStart
 
 
@@ -26,8 +27,9 @@ class CustomWebViewClient(
     )
 
     private val pjoFinishedClients = mutableListOf(
-        SignUpPage(context, sharedPrefs),
-        RedirectToTracker(context, sharedPrefs)
+        SignInPage(context, sharedPrefs),
+        RedirectToTracker(context, sharedPrefs),
+        AddReceiptPage()
     )
 
     override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {

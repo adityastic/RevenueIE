@@ -6,7 +6,7 @@ import android.webkit.WebView
 import com.aditya.revenueie.PJOInterface
 import com.aditya.revenueie.R
 
-class SignUpPage(
+class SignInPage(
     private val context: Context,
     private val prefs: SharedPreferences,
 ) : PJOInterface() {
