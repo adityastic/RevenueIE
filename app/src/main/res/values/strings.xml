@@ -11,7 +11,7 @@
     <string name="key_dobyy">dobyy</string>
     <string name="autofill_dobdd">Date of Birth - DD</string>
     <string name="autofill_dobmm">Date of Birth - MM</string>
-    <string name="autofill_dobyy">Date of Birth - YY</string>
+    <string name="autofill_dobyy">Date of Birth - YYYY</string>
     <string name="autofill_password">Password</string>
     <string name="key_password">password</string>
     <string name="pref_appmode_title">Application Modes</string>
