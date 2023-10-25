@@ -1,8 +1,13 @@
 package com.aditya.revenueie
 
 import android.app.Activity
-import android.content.*
+import android.content.ActivityNotFoundException
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -13,6 +18,7 @@ import android.webkit.WebView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.aditya.revenueie.databinding.ActivityMainBinding
 import com.google.android.gms.auth.api.phone.SmsRetriever
 import com.google.android.gms.common.api.CommonStatusCodes
@@ -74,7 +80,13 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         val intentFilter = IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION)
-        registerReceiver(smsVerificationReceiver, intentFilter)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            ContextCompat.registerReceiver(this, smsVerificationReceiver, intentFilter,
+                ContextCompat.RECEIVER_EXPORTED)
+        } else {
+            registerReceiver(smsVerificationReceiver, intentFilter)
+        }
 
         smsCallback = ValueCallback<String> { it ->
             binding.contents.webView.evaluateJavascript("javascript: document.getElementById('passcode-input').value = '${it}'; document.getElementById('passcodeForm').submit();", null)

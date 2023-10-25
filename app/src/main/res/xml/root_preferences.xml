@@ -39,6 +39,11 @@
 
         <SwitchPreferenceCompat
             app:defaultValue="true"
+            app:key="@string/mode_autoselect_health_key"
+            app:title="@string/mode_autoselect_health_title" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
             app:key="@string/mode_autofill_key"
             app:title="@string/mode_autofill_title" />
     </PreferenceCategory>

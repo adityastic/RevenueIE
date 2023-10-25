@@ -29,7 +29,7 @@ class CustomWebViewClient(
     private val pjoFinishedClients = mutableListOf(
         SignInPage(context, sharedPrefs),
         RedirectToTracker(context, sharedPrefs),
-        AddReceiptPage()
+        AddReceiptPage(context, sharedPrefs)
     )
 
     override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {

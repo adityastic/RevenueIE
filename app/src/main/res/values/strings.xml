@@ -21,4 +21,6 @@
     <string name="mode_revenue_tracker_summary_off">Turn on redirect to Revenue Tracker automatically open after login.</string>
     <string name="mode_autofill_key">autofill_otp</string>
     <string name="mode_autofill_title">Autofill One time passwords when signing in</string>
+    <string name="mode_autoselect_health_key">autoselect_title</string>
+    <string name="mode_autoselect_health_title">Autofill Health and General Categories</string>
 </resources>
